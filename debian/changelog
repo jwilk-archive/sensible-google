@@ -1,0 +1,11 @@
+sensible-google (0.20060317) unstable; urgency=low
+
+  * Fix warnings when calling without parameters.
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Fri, 17 Mar 2006 11:54:18 +0100
+
+sensible-google (0.20060312) unstable; urgency=low
+
+  * Initial release.
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Sun, 12 Mar 2006 10:06:31 +0100

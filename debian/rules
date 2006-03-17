@@ -1,0 +1,38 @@
+#!/usr/bin/make -f
+
+configure:
+
+build:
+
+clean:
+	dh_testdir
+	dh_testroot
+	dh_clean 
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k 
+	dh_installdirs
+	dh_install sensible-google usr/bin
+	cp config $(CURDIR)/debian/sensible-google/etc/sensible-google
+
+binary-indep: build install
+
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs 
+	dh_installdocs
+	dh_installexamples
+	dh_compress
+	dh_fixperms
+	dh_perl
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure

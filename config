@@ -1,0 +1,12 @@
+$site=%?%20site%3a
+$debian=packages.debian.org
+--	google.com/search?ie=UTF-8&q=%?
+	-w	${site}wikipedia.org
+	-D	${site}${debian}
+	-De	${site}${debian}/experimental
+	-Du	${site}${debian}/unstable
+	-Dt	${site}${debian}/testing
+	-Ds	${site}${debian}/stable
+	-Do	${site}${debian}/oldstable
+-g	groups.google.com/groups?ie=UTF-8&q=%?
+-d	www.thefreedictionary.com/?Word=%?

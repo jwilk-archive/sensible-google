@@ -1,0 +1,11 @@
+Source: sensible-google
+Section: utils
+Priority: optional
+Maintainer: Jakub Wilk <ubanus@users.sf.net>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.2
+
+Package: sensible-google
+Architecture: all
+Depends: ${perl:Depends}, liburi-perl, debianutils
+Description: Sensible search (using e.g. Google)

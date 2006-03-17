@@ -1,0 +1,70 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use I18N::Langinfo qw(CODESET langinfo);
+use Encode qw(from_to);
+use URI::Escape qw(uri_escape);
+
+my %config_variables;
+my $last_engine;
+my %engines;
+open CONFIG, '/etc/sensible-google' or die;
+while (<CONFIG>)
+{
+  chomp;
+  if (/^\$([a-z]+)=(.*)$/)
+  {
+    $config_variables{"$1"} = $2;
+    next;
+  }
+  if (/^-([A-Za-z0-9]+|-)\t+(.*)$/)
+  {
+    my $code = $1;
+    $last_engine = $2;
+    $last_engine =~ s/\$\{([a-z]+)\}/$config_variables{"$1"}/ge;
+    $engines{$code} = $last_engine;
+    next;
+  }
+  if (/^\t+-([A-Za-z0-9]+)\t+(.*)$/)
+  {
+    my $code = $1;
+    my $subengine = $2;
+    $subengine =~ s/\$\{([a-z]+)\}/$config_variables{"$1"}/ge;
+    $_ = $last_engine;
+    s/%\?/$subengine/;
+    $engines{$code} = $_;
+    next;
+  }
+}
+close CONFIG;
+
+my $search = undef;
+
+my $engine = $engines{'-'};
+PARAM:
+while ($_ = shift @ARGV)
+{
+  $_ = qq/"$_"/ if index($_, ' ') >= 0 && index($_, '"') < 0;
+  $search = "$search $_", next if defined $search;
+  foreach my $code (keys %engines)
+  {
+    $engine = $engines{$code}, 
+    next PARAM if $_ eq "-$code";
+  }
+  $search = shift(@ARGV) || '', next if $_ eq '--';
+  $search = $_;
+}
+
+my $codeset = langinfo(CODESET);
+$search .= '';
+from_to($search, $codeset, 'UTF-8');
+$search = uri_escape($search);
+$engine =~ s/%\?/$search/;
+exec '/usr/bin/sensible-browser', "http://$engine";
+
+# Written on 4 Dec 2005
+# Rewritten on 18 Jan 2006
+# Rewritten on 12 Mar 2006
+# Copyright (c) 2005, 2006 Jakub Wilk <ubanus@users.sf.net>
+
+# vim:ts=2 sw=2 et
