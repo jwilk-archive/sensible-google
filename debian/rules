@@ -13,13 +13,13 @@ install: build
 	dh_testdir
 	dh_testroot
 	dh_clean -k 
-	dh_installdirs
 	dh_install sensible-google usr/bin
+	dh_installdirs /etc
 	cp config $(CURDIR)/debian/sensible-google/etc/sensible-google
 
-binary-indep: build install
-
 binary-arch: build install
+
+binary-indep: build install
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs 

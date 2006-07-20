@@ -1,3 +1,10 @@
+sensible-google (0.20060620) unstable; urgency=low
+
+  * New flag -p: search through python documentation
+  * New flag -gi: find a Usenet message by its Message-Id
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Thu, 20 Jul 2006 11:54:15 +0200
+
 sensible-google (0.20060317) unstable; urgency=low
 
   * Fix warnings when calling without parameters.
