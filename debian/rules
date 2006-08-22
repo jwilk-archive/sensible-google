@@ -1,13 +1,21 @@
 #!/usr/bin/make -f
 
+DB2MAN=/usr/share/sgml/docbook/stylesheet/xsl/nwalsh/manpages/docbook.xsl
+XMLLINT=$(shell command -v /usr/bin/xmllint || echo :) --valid
+XSLTPROC=/usr/bin/xsltproc --nonet
+
+sensible-google.1: manual.xml
+	$(XMLLINT) $(<) > /dev/null
+	$(XSLTPROC) $(DB2MAN) $(<)
+
 configure:
 
-build:
+build: sensible-google.1
 
 clean:
 	dh_testdir
 	dh_testroot
-	dh_clean 
+	dh_clean *.[0-9]
 
 install: build
 	dh_testdir
@@ -25,6 +33,7 @@ binary-indep: build install
 	dh_installchangelogs 
 	dh_installdocs
 	dh_installexamples
+	dh_installman *.1
 	dh_compress
 	dh_fixperms
 	dh_perl

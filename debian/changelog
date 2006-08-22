@@ -1,3 +1,10 @@
+sensible-google (0.20060822) unstable; urgency=low
+
+  * New option: --help.
+  * Include the manual page.
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Tue, 22 Aug 2006 10:34:33 +0200
+
 sensible-google (0.20060620) unstable; urgency=low
 
   * New flag -p: search through python documentation

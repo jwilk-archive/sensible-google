@@ -2,10 +2,11 @@ Source: sensible-google
 Section: utils
 Priority: optional
 Maintainer: Jakub Wilk <ubanus@users.sf.net>
-Build-Depends: debhelper (>= 4.0.0)
+Build-Depends: debhelper (>= 4.0.0), xsltproc, docbook-xsl
 Standards-Version: 3.6.2
+Bugs: mailto:ubanus@users.sf.net
 
 Package: sensible-google
 Architecture: all
 Depends: ${perl:Depends}, liburi-perl, debianutils
-Description: Sensible search (using e.g. Google)
+Description: Sensible web searching (using e.g. Google)

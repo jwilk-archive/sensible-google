@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+[
+	<!ENTITY p 'sensible-google'>
+]
+>
+
+<refentry>
+	<refentryinfo>
+    	<title>Sensible google manual</title>
+		<productname>Sensible google</productname>
+		<address><email>ubanus@users.sf.net</email></address>
+		<date>2006-08-22</date>
+		<copyright>
+			<year>2005</year>
+			<year>2006</year>
+			<holder>Jakub Wilk</holder>
+		</copyright>
+	</refentryinfo>
+	<refmeta>
+    	<refentrytitle>Sensible google</refentrytitle>
+		<manvolnum>1</manvolnum>
+	</refmeta>
+	<refnamediv>
+		<refname>&p;</refname>
+		<refpurpose>sensible web searching (using e.g. Google)</refpurpose>
+	</refnamediv>
+	<refsynopsisdiv>
+		<cmdsynopsis>
+			<command>&p;</command>
+			<arg choice='plain'><option>--help</option></arg>
+		</cmdsynopsis>
+		<cmdsynopsis>
+			<command>&p;</command>
+			<arg choice='opt'><option><replaceable>Engine</replaceable></option></arg>
+			<arg choice='plain' rep='repeat'><replaceable>keyword</replaceable></arg>
+		</cmdsynopsis>
+	</refsynopsisdiv>
+	<refsect1>
+		<title>Options</title>
+		<para>
+			Available engines depend on the configuration file.
+			To list them, use the <option>--help</option> option.
+		</para>
+	</refsect1>
+	<refsect1>
+		<title>Files</title>
+		<variablelist>
+			<varlistentry>
+				<term><filename>/etc/&p;</filename></term>
+				<listitem><para>The configuration file</para></listitem>
+			</varlistentry>
+		</variablelist>
+	</refsect1>
+	<refsect1>
+		<title>See also</title>
+		<para>
+			<citerefentry>
+				<refentrytitle>sensible-browser</refentrytitle>
+				<manvolnum>1</manvolnum>
+			</citerefentry>
+		</para>
+	</refsect1>
+</refentry>
+
+<!-- vim:set ts=4 sw=4 fenc=utf8: -->

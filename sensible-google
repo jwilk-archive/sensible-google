@@ -1,8 +1,10 @@
 #!/usr/bin/perl
+
 use strict;
 use warnings;
+
 use I18N::Langinfo qw(CODESET langinfo);
-use Encode qw(from_to);
+use Encode ();
 use URI::Escape qw(uri_escape);
 
 my %config_variables;
@@ -14,14 +16,14 @@ while (<CONFIG>)
   chomp;
   if (/^\$([a-z]+)=(.*)$/)
   {
-    $config_variables{"$1"} = $2;
+    $config_variables{$1} = $2;
     next;
   }
   if (/^-([A-Za-z0-9]+|-)\t+(.*)$/)
   {
     my $code = $1;
     $last_engine = $2;
-    $last_engine =~ s/\$\{([a-z]+)\}/$config_variables{"$1"}/ge;
+    $last_engine =~ s/\$\{([a-z]+)\}/$config_variables{$1}/ge;
     $engines{$code} = $last_engine;
     next;
   }
@@ -29,7 +31,7 @@ while (<CONFIG>)
   {
     my $code = $1;
     my $subengine = $2;
-    $subengine =~ s/\$\{([a-z]+)\}/$config_variables{"$1"}/ge;
+    $subengine =~ s/\$\{([a-z]+)\}/$config_variables{$1}/ge;
     $_ = $last_engine;
     s/%\?/$subengine/;
     $engines{$code} = $_;
@@ -37,6 +39,25 @@ while (<CONFIG>)
   }
 }
 close CONFIG;
+
+sub usage()
+{
+  print "Usage:\n    $0 --help\n    $0 [engine] keywords...\n\nEngines:\n";
+  foreach my $option (sort keys %engines)
+  {
+    my $url = "http://" . $engines{$option};
+    $url =~ s/%\?/<keywords>/;
+    if ($option eq '-')
+    {
+      print " (none) $url\n";
+    }
+    else
+    {
+      printf "%7s %s\n", "-$option", $url
+    }
+  }
+  exit 1;
+}
 
 my $search = undef;
 
@@ -46,6 +67,10 @@ while ($_ = shift @ARGV)
 {
   $_ = qq/"$_"/ if index($_, ' ') >= 0 && index($_, '"') < 0;
   $search = "$search $_", next if defined $search;
+  if ($_ eq '--help')
+  {
+    usage();
+  }
   foreach my $code (keys %engines)
   {
     $engine = $engines{$code}, 
@@ -57,7 +82,7 @@ while ($_ = shift @ARGV)
 
 my $codeset = langinfo(CODESET);
 $search .= '';
-from_to($search, $codeset, 'UTF-8');
+Encode::from_to($search, $codeset, 'UTF-8');
 $search = uri_escape($search);
 $engine =~ s/%\?/$search/;
 exec '/usr/bin/sensible-browser', "http://$engine";
