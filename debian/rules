@@ -1,11 +1,11 @@
 #!/usr/bin/make -f
 
-DB2MAN=/usr/share/sgml/docbook/stylesheet/xsl/nwalsh/manpages/docbook.xsl
-XMLLINT=$(shell command -v /usr/bin/xmllint || echo :) --valid
-XSLTPROC=/usr/bin/xsltproc --nonet
+DB2MAN=/usr/share/xml/docbook/stylesheet/nwalsh/manpages/docbook.xsl
+XMLLINT=$(shell command -v /usr/bin/xmllint || echo :) --valid --noout
+XSLTPROC=/usr/bin/xsltproc
 
 sensible-google.1: manual.xml
-	$(XMLLINT) $(<) > /dev/null
+	$(XMLLINT) $(<)
 	$(XSLTPROC) $(DB2MAN) $(<)
 
 configure:

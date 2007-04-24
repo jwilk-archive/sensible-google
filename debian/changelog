@@ -1,3 +1,11 @@
+sensible-google (0.20060822.1) unstable; urgency=low
+
+  * Repackage.
+  * New flag -3: search through W3C documents.
+  * New flag -f: find a freshmeat.net project.
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Tue, 24 Apr 2007 19:04:46 +0200
+
 sensible-google (0.20060822) unstable; urgency=low
 
   * New option: --help.

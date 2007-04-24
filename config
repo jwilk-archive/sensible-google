@@ -9,6 +9,8 @@ $debian=packages.debian.org
 	-Ds	${site}${debian}/stable
 	-Do	${site}${debian}/oldstable
 	-p	${site}http://python.org/doc/
+	-3	${site}http://www.w3.org/
 -g	groups.google.com/groups?ie=UTF-8&q=%?
 -gi	groups.google.com/groups?selm=%?
 -d	www.thefreedictionary.com/?Word=%?
+-f	freshmeat.net/search/?q=%?&section=projects
