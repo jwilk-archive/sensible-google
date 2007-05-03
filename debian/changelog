@@ -1,3 +1,10 @@
+sensible-google (0.20070503) unstable; urgency=low
+
+  * Set Google's output encoding explicitly.
+  * Update copyright information.
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Thu, 03 May 2007 19:48:42 +0200
+
 sensible-google (0.20060822.1) unstable; urgency=low
 
   * Repackage.

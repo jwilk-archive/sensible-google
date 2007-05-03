@@ -1,6 +1,6 @@
 $site=%?%20site%3a
 $debian=packages.debian.org
---	google.com/search?ie=UTF-8&q=%?
+--	google.com/search?ie=UTF-8&oe=UTF-8&q=%?
 	-w	${site}wikipedia.org
 	-D	${site}${debian}
 	-De	${site}${debian}/experimental

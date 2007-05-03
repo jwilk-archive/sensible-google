@@ -90,6 +90,6 @@ exec '/usr/bin/sensible-browser', "http://$engine";
 # Written on 4 Dec 2005
 # Rewritten on 18 Jan 2006
 # Rewritten on 12 Mar 2006
-# Copyright (c) 2005, 2006 Jakub Wilk <ubanus@users.sf.net>
+# Copyright (c) 2005, 2006, 2007 Jakub Wilk <ubanus@users.sf.net>
 
 # vim:ts=2 sw=2 et
