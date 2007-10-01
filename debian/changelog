@@ -1,3 +1,9 @@
+sensible-google (0.20071001) unstable; urgency=low
+
+  * Set proper encodings for Google Groups.
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Mon, 01 Oct 2007 20:56:35 +0200
+
 sensible-google (0.20070503) unstable; urgency=low
 
   * Set Google's output encoding explicitly.
