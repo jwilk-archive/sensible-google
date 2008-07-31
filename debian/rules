@@ -13,8 +13,7 @@ configure: ;
 build: sensible-google.1 ;
 
 clean:
-	dh_testdir
-	dh_testroot
+	dh clean
 	dh_clean *.[0-9]
 
 install: build
