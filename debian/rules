@@ -8,9 +8,9 @@ sensible-google.1: manual.xml
 	$(XMLLINT) $(<)
 	$(XSLTPROC) $(DB2MAN) $(<)
 
-configure:
+configure: ;
 
-build: sensible-google.1
+build: sensible-google.1 ;
 
 clean:
 	dh_testdir
@@ -18,30 +18,20 @@ clean:
 	dh_clean *.[0-9]
 
 install: build
-	dh_testdir
-	dh_testroot
-	dh_clean -k 
+	dh install --until dh_prep
 	dh_install sensible-google usr/bin
 	dh_installdirs /etc
 	cp config $(CURDIR)/debian/sensible-google/etc/sensible-google
-
-binary-arch: build install
-
-binary-indep: build install
-	dh_testdir
-	dh_testroot
-	dh_installchangelogs 
-	dh_installdocs
-	dh_installexamples
 	dh_installman *.1
-	dh_compress
-	dh_fixperms
-	dh_perl
-	dh_installdeb
-	dh_shlibdeps
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
+	dh install --remaining
+
+binary-arch: install ;
+
+binary-indep: install
+	dh binary-indep
 
 binary: binary-indep binary-arch
+
 .PHONY: build clean binary-indep binary-arch binary install configure
+
+# vim:ts=4 sw=4 noet
