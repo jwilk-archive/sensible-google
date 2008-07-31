@@ -21,6 +21,7 @@
 	<refmeta>
     	<refentrytitle>Sensible google</refentrytitle>
 		<manvolnum>1</manvolnum>
+		<refmiscinfo class='version'>0.20071001.1</refmiscinfo>
 	</refmeta>
 	<refnamediv>
 		<refname>&p;</refname>
