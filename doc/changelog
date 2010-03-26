@@ -2,20 +2,20 @@ sensible-google (0.20071001.1) unstable; urgency=low
 
   * Repackage using debhelper 7.
 
- -- Jakub Wilk <ubanus@users.sf.net>  Thu, 31 Jul 2008 18:09:08 +0200
+ -- Jakub Wilk <jwilk@jwilk.net>  Thu, 31 Jul 2008 18:09:08 +0200
 
 sensible-google (0.20071001) unstable; urgency=low
 
   * Set proper encodings for Google Groups.
 
- -- Jakub Wilk <ubanus@users.sf.net>  Mon, 01 Oct 2007 20:56:35 +0200
+ -- Jakub Wilk <jwilk@jwilk.net>  Mon, 01 Oct 2007 20:56:35 +0200
 
 sensible-google (0.20070503) unstable; urgency=low
 
   * Set Google's output encoding explicitly.
   * Update copyright information.
 
- -- Jakub Wilk <ubanus@users.sf.net>  Thu, 03 May 2007 19:48:42 +0200
+ -- Jakub Wilk <jwilk@jwilk.net>  Thu, 03 May 2007 19:48:42 +0200
 
 sensible-google (0.20060822.1) unstable; urgency=low
 
@@ -23,30 +23,30 @@ sensible-google (0.20060822.1) unstable; urgency=low
   * New flag `-3`: search through W3C documents.
   * New flag `-f`: find a freshmeat.net project.
 
- -- Jakub Wilk <ubanus@users.sf.net>  Tue, 24 Apr 2007 19:04:46 +0200
+ -- Jakub Wilk <jwilk@jwilk.net>  Tue, 24 Apr 2007 19:04:46 +0200
 
 sensible-google (0.20060822) unstable; urgency=low
 
   * New option: `--help`.
   * Include the manual page.
 
- -- Jakub Wilk <ubanus@users.sf.net>  Tue, 22 Aug 2006 10:34:33 +0200
+ -- Jakub Wilk <jwilk@jwilk.net>  Tue, 22 Aug 2006 10:34:33 +0200
 
 sensible-google (0.20060620) unstable; urgency=low
 
   * New flag `-p`: search through python documentation.
   * New flag `-gi`: find a Usenet message by its `Message-Id`.
 
- -- Jakub Wilk <ubanus@users.sf.net>  Thu, 20 Jul 2006 11:54:15 +0200
+ -- Jakub Wilk <jwilk@jwilk.net>  Thu, 20 Jul 2006 11:54:15 +0200
 
 sensible-google (0.20060317) unstable; urgency=low
 
   * Fix warnings when calling without parameters.
 
- -- Jakub Wilk <ubanus@users.sf.net>  Fri, 17 Mar 2006 11:54:18 +0100
+ -- Jakub Wilk <jwilk@jwilk.net>  Fri, 17 Mar 2006 11:54:18 +0100
 
 sensible-google (0.20060312) unstable; urgency=low
 
   * Initial release.
 
- -- Jakub Wilk <ubanus@users.sf.net>  Sun, 12 Mar 2006 10:06:31 +0100
+ -- Jakub Wilk <jwilk@jwilk.net>  Sun, 12 Mar 2006 10:06:31 +0100
