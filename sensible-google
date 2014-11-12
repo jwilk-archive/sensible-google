@@ -93,7 +93,7 @@ while ($_ = shift @ARGV)
   }
   foreach my $code (keys %engines)
   {
-    $engine = $engines{$code}, 
+    $engine = $engines{$code},
     next PARAM if $_ eq "-$code";
   }
   $search = shift(@ARGV) || '', next if $_ eq '--';
