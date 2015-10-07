@@ -34,7 +34,7 @@ sensible-google (0.20060822) unstable; urgency=low
 
 sensible-google (0.20060620) unstable; urgency=low
 
-  * New flag `-p`: search through python documentation.
+  * New flag `-p`: search through Python documentation.
   * New flag `-gi`: find a Usenet message by its `Message-Id`.
 
  -- Jakub Wilk <jwilk@jwilk.net>  Thu, 20 Jul 2006 11:54:15 +0200
