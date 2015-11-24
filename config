@@ -8,8 +8,8 @@ $debian=packages.debian.org
 	-Dt	${site}${debian}/testing
 	-Ds	${site}${debian}/stable
 	-Do	${site}${debian}/oldstable
-	-p	${site}https://docs.python.org/
-	-3	${site}http://www.w3.org/
+	-p	${site}docs.python.org
+	-3	${site}www.w3.org
 -g	groups.google.com/groups?ie=UTF-8&oe=UTF-8&q=%?
 -gi	groups.google.com/groups?selm=%?
 -d	www.thefreedictionary.com/?Word=%?
