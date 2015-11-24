@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# Copyright © 2005, 2006, 2007 Jakub Wilk <jwilk@jwilk.net>
+# Copyright © 2005-2015 Jakub Wilk <jwilk@jwilk.net>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the “Software”), to deal
@@ -30,7 +30,8 @@ use URI::Escape qw(uri_escape);
 my %config_variables;
 my $last_engine;
 my %engines;
-open CONFIG, '/etc/sensible-google' or die;
+my $config_path = '/etc/sensible-google';
+open CONFIG, $config_path or die "Can't open $config_path: $!";
 while (<CONFIG>)
 {
   chomp;

@@ -2,8 +2,9 @@ sensible-google (0.3) UNRELEASED; urgency=low
 
   * Drop Debian packaging.
   * Fix the Python documentation search.
+  * Improve error handling.
 
- -- Jakub Wilk <jwilk@jwilk.net>  Tue, 24 Nov 2015 18:06:19 +0100
+ -- Jakub Wilk <jwilk@jwilk.net>  Tue, 24 Nov 2015 18:12:47 +0100
 
 sensible-google (0.20071001.1) unstable; urgency=low
 
